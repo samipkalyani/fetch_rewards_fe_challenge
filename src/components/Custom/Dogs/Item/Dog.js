@@ -21,11 +21,7 @@ const Dog = (props) => {
     <Card style={cardStyle}>
       <CardHeader
         action={
-          <IconButton
-            onClick={() => {
-              favouritesHandler(dog.id);
-            }}
-          >
+          <IconButton onClick={favouritesHandler(dog.id)}>
             {favourites.includes(dog.id) ? (
               <FavoriteIcon className="heart" />
             ) : (

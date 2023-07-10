@@ -79,7 +79,7 @@ const Login = (props) => {
         await axios.post(url, body, {
           withCredentials: true,
         });
-        setAppState((...prevAppState) => ({
+          ((...prevAppState) => ({
           ...prevAppState,
           isAuth: true,
           firstVisit: true,

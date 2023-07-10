@@ -28,7 +28,7 @@ const MatchedDog = (props) => {
           Age: {dog.age}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Zip cpde: {dog.zip_code}
+          Zip code: {dog.zip_code}
         </Typography>
       </Box>
     </Modal>

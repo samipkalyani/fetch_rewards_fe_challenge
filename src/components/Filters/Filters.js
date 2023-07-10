@@ -3,7 +3,7 @@ import { Grid } from "@mui/material";
 import Button from "@mui/material/Button";
 import axios from "axios";
 
-const Controls = (props) => {
+const Filters = (props) => {
   const {
     breeds,
     sortOrder,
@@ -58,6 +58,7 @@ const Controls = (props) => {
         <Button
           variant="contained"
           disabled={favourites.length === 0}
+          name="findAMatch"
           onClick={() => findAMatch()}
         >
           Find a match!
@@ -86,4 +87,4 @@ const Controls = (props) => {
   );
 };
 
-export default Controls;
+export default Filters;

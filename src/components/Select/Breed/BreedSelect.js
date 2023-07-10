@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
@@ -33,20 +33,17 @@ function getStyles(name, breeds, theme) {
 
 const BreedSelect = (props) => {
   const { breeds, BreedSetter, setAppState } = props;
-  const [allBreeds, setAllBreeds] = React.useState([]);
+  const [allBreeds, setAllBreeds] = useState([]);
   const theme = useTheme();
 
   const handleChange = (event) => {
     const {
       target: { value },
     } = event;
-    BreedSetter(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
+    BreedSetter(typeof value === "string" ? value.split(",") : value);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const getAllBreeds = async () => {
       const url = "https://frontend-take-home-service.fetch.com/dogs/breeds";
       try {
@@ -82,8 +79,7 @@ const BreedSelect = (props) => {
         <FormControl sx={{ m: 1, width: 300 }}>
           <InputLabel id="demo-multiple-name-label">Breed</InputLabel>
           <Select
-            labelId="demo-multiple-name-label"
-            id="demo-multiple-name"
+            data-testid="breed-select"
             multiple
             value={breeds}
             onChange={handleChange}

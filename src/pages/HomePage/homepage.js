@@ -5,7 +5,7 @@ import Header from "../../components/Header/header";
 import Forward from "../../components/Button/Forward";
 import Previous from "../../components/Button/Previous";
 import BreedSelect from "../../components/Select/Breed/BreedSelect";
-import Controls from "../../components/Controls/Filters/Filters";
+import Filters from "../../components/Filters/Filters";
 import MatchedDog from "../../components/Modals/MatchedDog/MatchedDog";
 import LoginSnackbar from "../../components/Snackbar/Login/Login";
 import Dogs from "../../components/Custom/Dogs/Container/Dogs";
@@ -133,7 +133,7 @@ const HomePage = (props) => {
         BreedSetter={setBreeds}
         setAppState={setAppState}
       ></BreedSelect>
-      <Controls
+      <Filters
         breeds={breeds}
         sortOrder={sortOrder}
         favourites={favourites}
@@ -142,7 +142,7 @@ const HomePage = (props) => {
         setMatchedDogModalOpen={setMatchedDogModalOpen}
         setFavourites={setFavourites}
         setAppState={setAppState}
-      ></Controls>
+      ></Filters>
       <Dogs
         dogs={dogs}
         favourites={favourites}
